@@ -26,7 +26,7 @@ isTruthy([]);
 isTruthy(10);
 isTruthy("foo");
 isTruthy("MisaelGatao");
-isTruthy(new Date();
+isTruthy(new Date());
 isTruthy(function() {});
 isTruthy(5 + 5);
 isTruthy(5 * 2);
