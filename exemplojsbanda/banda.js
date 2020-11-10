@@ -16,3 +16,24 @@ console.log(`Nome da Banda: ${nome}`);
 console.log(`Localização da Banda: Fica localizada no
 bairro ${bairro} na cidade de ${cidade} - ${estado}`);
 
+function ehPar(numero) {
+  if(numero % 2 === 0) {
+  console.log('O numero é par');
+  } else {
+  console.log('O valor informado é impar')
+  };
+};
+
+function ehParTernario(numero) {
+  return numero % 2 === 0 ? 'É par' : 'É impar';
+}
+
+ehPar(13);
+
+// arrow function
+
+function sayHello() {}
+
+const digaSeuNome3 = function(name) {};
+
+const parArrow = numero => numero % 2 === 0 ? 'É par' : 'É impar';
