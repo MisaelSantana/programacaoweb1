@@ -34,6 +34,31 @@ ehPar(13);
 
 function sayHello() {}
 
-const digaSeuNome3 = function(name) {};
+const digaSeuNome3 = function(name) {
+  console.log(nome)
+};
 
 const parArrow = numero => numero % 2 === 0 ? 'É par' : 'É impar';
+
+function tipoDeAnimal(animal) {
+  if(animal === 'dog') {
+  console.log('Auau')
+  } else {
+  console.log('Miau');
+  }
+}
+
+tipoDeAnimal('dog')
+tipoDeAnimal('cat')
+
+const setTypeAnimal = (animal) => {
+  if(!animal) {
+  return 'Animal não identificado';
+  }
+  return animal === 'dog'?
+console.log('auauauau'): console.log('miauuuuu');
+} 
+
+setTypeAnimal('dog')
+setTypeAnimal('cat')
+setTypeAnimal();
