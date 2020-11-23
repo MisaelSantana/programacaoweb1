@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch</title>
+</head>
+<body>
+
+<script type="text/javascript">
+    console.log('Utilização do Fetch');
+    // console.log(fetch);
+    // Esta parte mostra como verificar se o Fetch está ativo dentro do brower como uma função nativa
+    fetch('https://swapi.dev/api/people/1') //fazendo a requisição para está API
+        .then(function(response){
+            if(!response.ok) throw new Error('Erro ao tentar fazer a requisição da API')    //tratamento do erro
+            // console.log(response.ok);   //esse carinha aqui faz uma pequena verificalção booleana true or false
+            return response.json();     //ele ira retornar um objeto, nesse caso vai ser do tipo string
+        })
+        .then(function(data){   //data vai ser um objeto json que vai receber os dados dessa requisição
+            console.log(data);
+        })
+        .catch(function(error){
+            console.error(error);
+        });
+
+    // Sem comentários para melhor visualização...
+
+        console.log('Utilização do Fetch');
+        console.log(fetch);
+
+    fetch('https://swapi.dev/api/people/1')
+        .then((response) => {
+            if(!response.ok) throw new Error('Erro ao tentar fazer a requisição da API')
+            console.log(response.ok);
+            return response.json();
+        })
+        .then((data) =>{
+            console.log(data);
+        })
+        .catch((error) => {
+            console.error(error);
+        });
+
+    // Forma mais "PRO kkk", um jeito mais praticavel.
+
+    console.log('Utilização do Fetch');
+    const doGet = (url) => {
+        const promisseCallback = (resolve, reject) => {
+            fetch(url)
+                .then((response) => {
+                    if(!response.ok) throw new Error('Erro ao tentar fazer a requisição da API' + response.status);
+                    return response.json();
+                })
+                .then(resolve)
+                .catch(reject);
+        }
+        return new Promise(promisseCallback);
+    }
+    doGet('https://swapi.dev/api/people/1').then(console.log).catch(console.error);
+
+</script>
+    
+</body>
+</html>
